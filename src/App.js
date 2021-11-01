@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {  Stage  } from '@inlet/react-pixi'
+import styles from './App.module.css'
+import React from 'react'
+import Square from './components/Square'
 
-function App() {
+
+
+
+const App = () => {
+
+  const width = window.innerWidth * 0.7
+  const height = window.innerHeight * 0.5
+  const options = {
+    backgroundColor: 0xaed8e6,
+    antialias: true,
+    autoDensity: true,
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   
+        <div className={styles.container}>
+          <Stage
+            className={styles.stage}
+            options={options}>
+          <Square appWidth={width} appHeight={height}/>
+          </Stage>
+        </div>
+   
+  )
 }
 
-export default App;
+export default App
