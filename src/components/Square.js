@@ -53,6 +53,10 @@ class Square extends Component {
               g.drawRect(this.state.x, this.state.y, this.width, this.height)
               g.endFill()
             }}
+            interactive
+            buttonMode
+            visible={this.state.visible}
+            click={this.handleClick}
           />
         </Container>
       </>
